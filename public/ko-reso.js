@@ -15,7 +15,7 @@ function ListingsViewModel(listings) {
   this.inputVal = ko.observable('');
   this.errorText = ko.observable(null);
   this.resourceTypes = ko.observableArray(['Properties','Offices','Members','Media', 'DataSystem']);
-  this.mlss = ko.observableArray(['test_sf', 'test_sd', 'abor']);
+  this.mlss = ko.observableArray(['test_sf', 'test_sd', 'abor', 'hiinfo', 'armls']);
   this.mls = ko.observable('test_sf');
   //this.formatTypes = ko.observableArray(['html','json','xml']);
   var self = this;
