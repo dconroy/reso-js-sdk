@@ -65,9 +65,6 @@ ListingsViewModel.prototype.next = function next() {
   });
 };
 
-var mainVM = new ListingsViewModel([]);
-ko.applyBindings(mainVM);
-
 
 reso.PropertiesFactory = function(prop) {
   return new Listing(prop);
@@ -84,7 +81,6 @@ reso.MediaFactory = function(prop) {
 reso.DataSystemFactory = function(prop) {
   return new DataSystem(prop);
 };
-mainVM.search();
 
 
 function BaseResource(src){
@@ -158,6 +154,10 @@ function DataSystem(src){
 }
 DataSystem.prototype = new BaseResource();
 DataSystem.prototype.constructor = BaseResource;
+
+var mainVM = new ListingsViewModel([]);
+ko.applyBindings(mainVM);
+setTimeout(function(){mainVM.search()},100);
 
 },{"knockout":2,"underscore":3}],2:[function(require,module,exports){
 /*!
