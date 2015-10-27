@@ -32,8 +32,8 @@ html
               td(data-bind='text: value')
     <!-- /ko -->
     <!-- ko if: selectedResource() === 'Offices' -->
-    div(data-bind='foreach: offices' style='width:90%;padding:20px;margin:auto')
-      div(style='width:100%')
+    div.listing-wrapper(data-bind='foreach: offices')
+      div.listing(style='width:100%')
         h2(data-bind='text: OfficeName')
         div(style='height:400px;overflow-y:scroll;display:inline-block; width:100%')
           table.table(data-bind='foreach: fields')
@@ -42,8 +42,8 @@ html
               td(data-bind='text: value')
     <!-- /ko -->
     <!-- ko if: selectedResource() === 'Members' -->
-    div(data-bind='foreach: members' style='width:90%;padding:20px;margin:auto')
-      div(style='width:100%')
+    div.listing-wrapper(data-bind='foreach: members' )
+      div.listing
         h2(data-bind='text: MemberFirstName() + " " + MemberLastName()')
         div(style='height:400px;overflow-y:scroll;display:inline-block; width:100%')
           table.table(data-bind='foreach: fields')
@@ -52,8 +52,8 @@ html
               td(data-bind='text: value')
     <!-- /ko -->
     <!-- ko if: selectedResource() === 'Media' -->
-    div(data-bind='foreach: media' style='width:90%;padding:20px;margin:auto')
-      div
+    div.listing-wrapper(data-bind='foreach: media' )
+      div.listing
         h2(data-bind='text: MediaURL')
         div(style='height:400px;overflow-y:scroll;display:inline-block; width:100%')
           table.table(data-bind='foreach: fields')
@@ -62,8 +62,8 @@ html
               td(data-bind='text: value')
     <!-- /ko -->
     <!-- ko if: selectedResource() === 'DataSystem' -->
-    div(data-bind='foreach: datasystems' style='width:90%;padding:20px;margin:auto')
-      div(style='width:100%')
+    div.listing-wrapper(data-bind='foreach: datasystems' )
+      div.listing
         h2(data-bind='text: Name')
         div(style='height:400px;overflow-y:scroll;display:inline-block; width:100%')
           table.table(data-bind='foreach: fields')
