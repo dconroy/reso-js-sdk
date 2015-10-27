@@ -51,6 +51,11 @@ ResoQuery.prototype.filter = function(filter){
   return this;
 }
 
+ResoQuery.prototype.orderby = function(orderField, order){
+  this.options.$orderby = orderField + ' ' + order ? order : 'desc';
+  return this;
+}
+
 ResoQuery.prototype.next = function(filter){
   this.options.$skip += this.options.$top;
   return this;

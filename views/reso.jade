@@ -10,6 +10,9 @@ html
       input(data-bind='value: inputVal' type='text' style='width:400px')
       select(data-bind='options: resourceTypes, value: selectedResource, event:{change: onResourceChange }' )
       select(data-bind='options: mlss, value: mls, event:{change: mlsChange }' )
+    div(data-bind='foreach: filterExamples')
+      div
+        a(data-bind='click:$parent.updateFilter, text:$data')
 
     div
       button(data-bind='click: next') next
@@ -28,6 +31,8 @@ html
             tr
               td(data-bind='text: name')
               td(data-bind='text: value')
+    div(data-bind='listings().length === 0')
+      h3 No listings found
     <!-- /ko -->
     <!-- ko if: selectedResource() === 'Offices' -->
     div(data-bind='foreach: offices' style='width:90%;padding:20px;margin:auto')
@@ -38,6 +43,8 @@ html
             tr
               td(data-bind='text: name')
               td(data-bind='text: value')
+    div(data-bind='offices().length === 0')
+      h3 No offices found
     <!-- /ko -->
     <!-- ko if: selectedResource() === 'Members' -->
     div(data-bind='foreach: members' style='width:90%;padding:20px;margin:auto')
@@ -48,6 +55,8 @@ html
             tr
               td(data-bind='text: name')
               td(data-bind='text: value')
+    div(data-bind='members().length === 0')
+      h3 No members found
     <!-- /ko -->
     <!-- ko if: selectedResource() === 'Media' -->
     div(data-bind='foreach: media' style='width:90%;padding:20px;margin:auto')
@@ -58,6 +67,8 @@ html
             tr
               td(data-bind='text: name')
               td(data-bind='text: value')
+    div(data-bind='media().length === 0')
+      h3 No media found
     <!-- /ko -->
     <!-- ko if: selectedResource() === 'DataSystem' -->
     div(data-bind='foreach: datasystems' style='width:90%;padding:20px;margin:auto')

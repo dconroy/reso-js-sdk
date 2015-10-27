@@ -16,6 +16,14 @@ function ListingsViewModel(listings) {
   this.errorText = ko.observable(null);
   this.resourceTypes = ko.observableArray(['Properties','Offices','Members','Media', 'DataSystem']);
   this.mlss = ko.observableArray(['test_sf', 'test_sd', 'abor', 'hiinfo', 'armls']);
+  this.filterExamples = ko.observableArray([
+    'ListPrice gt 750000',
+    'geo.distance(Location, POINT(-122.39 37.73)) lt 50'
+  ]);
+  var self = this;
+  this.updateFilter = function(filter){
+    self.inputVal(filter)
+  }
   this.mls = ko.observable('test_sf');
   //this.formatTypes = ko.observableArray(['html','json','xml']);
   var self = this;
@@ -40,6 +48,7 @@ ListingsViewModel.prototype.search = function search(){
     self.onRecords(err,properties)
   });
 };
+
 ListingsViewModel.prototype.onRecords = function onRecords(err, records){
 
   if(err) {
