@@ -1,0 +1,19 @@
+{
+  "name": "hack2",
+  "version": "0.0.1",
+  "description": "hack2",
+  "author": "Mathew Sam <mat@rets.ly>",
+  "private": false,
+  "main": "lib/server",
+  "dependencies": {
+    "express": "4.9.0",
+    "jade": "1.9.2",
+    "browserify": "11.2.0",
+    "underscore": "*",
+    "knockout": "*",
+    "superagent": "*"
+  },
+  "engines": {
+    "node": "~0.10.26"
+  }
+}
