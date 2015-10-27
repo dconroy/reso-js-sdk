@@ -1,0 +1,67 @@
+body {
+  font-size: 13px;
+}
+.head {
+  width: 90%;
+  margin: auto;
+  margin-bottom: 30px;
+}
+.head h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #039;
+}
+.head select {
+  margin-right: 2%;
+  width: 15%;
+}
+.head input {
+  width: 50%;
+  margin-right: 2%;
+}
+.head button {
+  width: 14%;
+}
+h2 {
+  font-size: 17px;
+  font-weight: bold;
+  color: #008000;
+  margin-bottom: 15px;
+  margin-top: 0;
+}
+.listing-wrapper {
+  width: 90%;
+  margin: auto;
+}
+.listing-wrapper .listing {
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 6px;
+  background: #f1f1f1;
+}
+.listing-wrapper .listing table {
+  font-size: 12px;
+}
+.listing-wrapper .listing table tr td {
+  padding: 5px 10px;
+}
+img {
+  max-width: 100%;
+}
+.next {
+  width: 90%;
+  margin: auto;
+  text-align: right;
+  padding: 20px 0 0 0;
+}
+.next button {
+  padding: 10px 30px;
+  background: #008000;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+}
+.table>tbody+tbody {
+  border: none;
+  border-bottom: dotted 1px #ccc;
+}

@@ -2,28 +2,30 @@ html
   head
     title="Retsly"
     link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css")
+    link(rel="stylesheet" href="styles.css")
+
 
   body
-    h1 Reso Plugfest 2015
-    div(style='width:80%')
-      button(data-bind='click: search') search
-      input(data-bind='value: inputVal' type='text' style='width:400px')
-      select(data-bind='options: resourceTypes, value: selectedResource, event:{change: onResourceChange }' )
+    div.head
+      h1 Reso Plugfest 2015
       select(data-bind='options: mlss, value: mls, event:{change: mlsChange }' )
+      select(data-bind='options: resourceTypes, value: selectedResource, event:{change: onResourceChange }' )
+      input(data-bind='value: inputVal' type='text')
+      button(data-bind='click: search') Filter
 
-    div
+    div.next
       button(data-bind='click: next') next
     <!-- ko if: errorText !== null -->
     h3(data-bind='text: errorText')
     <!-- /ko -->
 
     <!-- ko if: selectedResource() === 'Properties' -->
-    div(data-bind='foreach: listings' style='width:90%;padding:20px;margin:auto')
-      div(style='width:100%')
+    div.listing-wrapper(data-bind='foreach: listings')
+      div.listing
         h2(data-bind='text: UnparsedAddress')
-        span(style='height:600px;overflow-y:scroll;display:inline-block; width:40%')
+        div.image(style='height:400px;overflow-y:scroll;display:inline-block; width:40%; padding-right:20px')
           img(data-bind='attr:{src: imageUrl}' width='400px')
-        div(style='height:600px;overflow-y:scroll;display:inline-block; width:60%')
+        div(style='height:400px;overflow-y:scroll;display:inline-block; width:60%')
           table.table(data-bind='foreach: fields')
             tr
               td(data-bind='text: name')
@@ -33,7 +35,7 @@ html
     div(data-bind='foreach: offices' style='width:90%;padding:20px;margin:auto')
       div(style='width:100%')
         h2(data-bind='text: OfficeName')
-        div(style='height:600px;overflow-y:scroll;display:inline-block; width:100%')
+        div(style='height:400px;overflow-y:scroll;display:inline-block; width:100%')
           table.table(data-bind='foreach: fields')
             tr
               td(data-bind='text: name')
@@ -43,7 +45,7 @@ html
     div(data-bind='foreach: members' style='width:90%;padding:20px;margin:auto')
       div(style='width:100%')
         h2(data-bind='text: MemberFirstName() + " " + MemberLastName()')
-        div(style='height:600px;overflow-y:scroll;display:inline-block; width:100%')
+        div(style='height:400px;overflow-y:scroll;display:inline-block; width:100%')
           table.table(data-bind='foreach: fields')
             tr
               td(data-bind='text: name')
@@ -53,7 +55,7 @@ html
     div(data-bind='foreach: media' style='width:90%;padding:20px;margin:auto')
       div
         h2(data-bind='text: MediaURL')
-        div(style='height:600px;overflow-y:scroll;display:inline-block; width:100%')
+        div(style='height:400px;overflow-y:scroll;display:inline-block; width:100%')
           table.table(data-bind='foreach: fields')
             tr
               td(data-bind='text: name')
@@ -63,7 +65,7 @@ html
     div(data-bind='foreach: datasystems' style='width:90%;padding:20px;margin:auto')
       div(style='width:100%')
         h2(data-bind='text: Name')
-        div(style='height:600px;overflow-y:scroll;display:inline-block; width:100%')
+        div(style='height:400px;overflow-y:scroll;display:inline-block; width:100%')
           table.table(data-bind='foreach: fields')
             tr
               td(data-bind='text: name')
